@@ -1,0 +1,419 @@
+/* header */
+body {
+    width: 100%;
+    height: 100%;
+}
+
+ul, ol {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    border : 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    margin-top: 1%;
+    width: 100%;
+    height: 15%;
+    position: relative;
+    display: flex;
+    order: -1;
+}
+
+.header ul {
+    width: 80%;
+    margin-right: 5%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* 요소들을 오른쪽으로 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.header ul li {
+    margin-right: 1%;
+}
+
+.header .main_logo {
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 20%;
+    height: 20%;
+}
+
+.header_menu_list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header_menu_list li {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.header_menu_list a {
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+/* 장바구니 */
+
+.header .basket {
+    position: relative;
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.header .basket a img {
+    width: 35px;
+    height: 35px;
+    padding:0;
+}
+
+/* 물품 개수를 표시하는 span의 스타일링 */
+.header .basket .number span {
+    position: absolute;
+    top: 13%;
+    left: 53%;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 12px;
+    margin-left: 5px; /* 간격을 조절 */
+}
+
+
+
+
+/* article*/
+article {
+    width: 80%;
+    height: 80%;
+}
+
+.container {
+    width: 85%;
+    height: 70%;
+    left: 20%;
+    position: relative;
+}
+
+.container .best .title {
+    margin-top: 5%;
+    width: 80%;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    display: flex;
+}
+.container .best .title::before {
+    content:"";
+    flex-grow: 1;
+    margin: 0px 16px;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}.container .best .title::after {
+    content:"";
+    flex-grow: 1;
+    margin: 0px 16px;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .product_list li {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.container .best .product_list .thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .best .product_list {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.container .best .product_list .description .name {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between; /* 다른 자식 요소 사이에 공간을 만듭니다. */
+    align-items: center;
+} 
+
+.container .best .product_list .description .name a {
+    font-size: 15px;
+    color: black;
+}
+
+.container .best .product_list .description .line {
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .best .product_list .description .name .icon_best {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    border: 1px solid red;
+    color: white;
+    background: red;
+}
+
+.container .best .product_list .description .price {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.container .category {
+    width: 80%;
+    margin-top: 30%;
+    position: absolute;
+}
+
+.container .category p{
+    font-weight: bold;
+    text-align: center;
+}
+
+.container .category .category_list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+}
+
+.container .category .category_list li {
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-left:1%;
+    margin-right:1%;
+}
+
+.container .category .category_list li a {
+    color: black;
+}
+.container .category .category_list li a:hover {
+    color:#ff5733;
+}
+
+
+.container .top .nav{
+    margin-top: 38%;
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.container .top .menu{
+    margin-top: 5%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.container .top ol {
+    display: flex; /* Flexbox로 설정하여 수평으로 나열 */
+    padding: 0;
+    margin-left: 1%;
+}
+
+.container .top .menu ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+}
+
+.container .top .menu ul li a{
+    justify-content: flex-end;
+    margin-right: 10px; /* 간격 조절 */
+}
+
+.container .top .menu a {
+    color: #333;
+    font-size: 14px;
+}
+
+.container .top .menu a:hover {
+    color: #ff5733;
+}
+
+.container .top .line1 {
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .top .line2 {
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;   
+}
+
+.container .main .product_list {
+    position: absolute;
+    margin-top: 45%;
+}
+
+
+
+aside {
+    margin-left: 1%;
+    width: 20%;
+    height: 75%;
+}
+
+/* aside category */
+.aside .category {
+    width: 10%;
+    position: relative;
+    left: 5%;
+}
+
+.aside .category .top a {
+    font-size: 22px;
+}
+
+.aside .category .top {
+    margin-bottom: 20px;
+}
+
+.aside .category ul {
+    display: flex;
+    flex-direction: column; /* 수직 방향으로 나열 */
+}
+
+.aside .category ul li {
+    margin-bottom: 10px; /* 각 항목 사이의 간격 조절 */
+}
+
+.aside .category ul li a {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.aside .category ul li a:hover {
+    color: #ff5733;
+}
+
+.container .main  {
+    width: 80%;
+    margin-top: 4%;
+    position: absolute;
+}
+
+.container .main .product_list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container .main .product_list li {
+    width: calc(22%); /* 간격을 조절하려면 40px(총 간격)을 제외합니다. */
+    box-sizing: border-box;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: center;
+}
+
+.container .main .product_list .thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .best .product_list {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.container .main .product_list .description .name {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between; /* 다른 자식 요소 사이에 공간을 만듭니다. */
+    align-items: center;
+} 
+
+.container .main .product_list .description .name a {
+    font-size: 15px;
+    color: black;
+}
+
+.container .main .product_list .description .line {
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    margin: 0;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .main .product_list .description .name .icon_best {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    border: 1px solid red;
+    color: white;
+    background: red;
+}
+
+.container .main .product_list .description .price {
+    width: 100%;
+    text-align: left;
+    margin-top: 5%;
+}
