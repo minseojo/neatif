@@ -4,68 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neatif if you com with us, NEAT IF</title>
-    <link rel="stylesheet" href="css/index/header/nav.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/header/conainer.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/header/aside.css" type="text/css" />
 </head>
 
 <body>
 <header class="header">
-
-    <div class="main_logo">
-        <a href="/index.html">
-            <img src="logo.png">
-        </a>
-    </div>
-
-    <ul class="header_menu_list">
-        <li>
-            <a href="">LOGIN</a>
-        </li>
-        <li>
-            <a href="">JOIN US</a>
-        </li>
-        <li>
-            <a href="">MY PAGE</a>
-        </li>
-        <li>
-            <a href="">NOTICE</a>
-        </li>
-        <li>
-            <a href="">Q&A</a>
-        </li>
-        <li>
-            <a href="">REVIEW</a>
-        </li>
-
-        <li class="basket">
-            <div class="img">
-                <a href="order/basket.html">
-                    <img src="basket.png" alt="basket_image">
-                </a>
-            </div>
-
-            <div class="number">
-                <span id="basket_count">0</span>
-            </div>
-        </li>
-
-        <!--
-        <li class="profile">
-            <div class="img">
-                <a href="#">
-                    <img src="user.png" alt="profile_image">
-                </a>
-            </div>
-            <ul class="profile_menu">
-                <li><a href="#">로그인</a></li>
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">마이페이지</a></li>
-                <li><a href="#">NOTICE</a></li>
-                <li><a href="#">Q&A</a></li>
-                <li><a href="#">REVIEW</a></li>
-            </ul>
-        </li>
-        -->
-    </ul>
 </header>
 
 <article class="container">
@@ -78,13 +22,13 @@
         <ul class="product_list">
             <li>
                 <div class="thumbnail">
-                    <img src="best1.png" alt="shirt_img"></img>
+                    <a href="item.html"><img src="best1.png" alt="item_img"></img></a>
                 </div>
                 
                 <div class="description">
                     <ul>
                         <li class="name">
-                            <a href="#">레이건 울 블레이져</a>
+                            <a href="item.html">레이건 울 블레이져</a>
                             <p class="icon_best">best</p>
                         </li>
                         <li class="line"></li>
@@ -184,13 +128,13 @@
             <ul>
                 <li>
                     <div class="thumbnail">
-                        <img src="best1.png" alt="shirt_img"></img>
+                        <a href="item.html"><img src="best1.png" alt="shirt_img"></img></a>
                     </div>
                     
                     <div class="description">
                         <ul>
                             <li class="name">
-                                <a href="#">레이건 울 블레이져</a>
+                                <a href="item.html">레이건 울 블레이져</a>
                                 <p class="icon_best">best</p>
                             </li>
                             <li class="line"></li>
@@ -334,6 +278,34 @@
 
 
 <aside class="aside">
+    <div class="main_logo">
+        <a href="/index.html">
+            <img src="logo.png">
+        </a>
+    </div>
+
+    <ul class="aside_menu_list">
+        <li>
+            <a href="">LOGIN</a>
+        </li>
+        <li>
+            <a href="">JOIN US</a>
+        </li>
+        <li>
+            <a href="">MY PAGE</a>
+        </li>
+        <li>
+            <a href="">NOTICE</a>
+        </li>
+        <li>
+            <a href="">Q&A</a>
+        </li>
+        <li>
+            <a href="">REVIEW</a>
+        </li>
+
+    </ul>
+
     <div class="category">
         <ul class="top">
             <li>
@@ -371,6 +343,31 @@
             </li>
         </ul>
     </div>
+
+    <div class="info" style="margin-top: 10%;" >
+        <p>고객센터&nbsp;&nbsp;<strong>010-5023-9977</strong></p>
+        <ul>
+            <li>MON-FRI PM 12:00 – PM 6:00</li>
+            <li>LUNCH TIME PM 13:00 – 14:00</li>
+            <li>SAT.SUN.HOLIDAY OFF</li>
+        </ul>
+
+        <ul style="margin-top: 10%;">
+            <p>은행 정보</p>
+            <li>우체국 402339-02-309137</li>
+            <li>IBK기업 010-5023-9977</li>
+            <li>예금주 : 조민서</li>
+        </ul>
+
+
+        <form class="search_container">
+            <button type="submit" class="search_submit" onclick="handleSearch(event)">
+                <img src="glass_icon.png" alt="Search Icon">
+            </button>
+            <input type="text" class="search_input" 
+                placeholder="Store item search" id="search_input">
+        </form>
+    </div>
 </aside>   
 
 <footer>
@@ -378,29 +375,21 @@
 </footer>
 
 <script>
-    // JavaScript로 이벤트 처리
-   /*
-    var profileContainer = document.querySelector('.profile');
-    var profileMenu = document.querySelector('.profile_menu');
 
-    profileContainer.addEventListener('mouseenter', function () {
-        profileMenu.style.display = 'block';
-    });
+    function handleSearch(event) {
+        const searchInput = document.getElementById('search_input');
+        if (searchInput.value.trim() === "") {
+            alert("검색어를 입력해주세요");
+            return;
+        }
+    }
 
-    profileMenu.addEventListener('mouseenter', function () {
-        profileMenu.style.display = 'block';
-    });
+    // // 물품 개수 동적으로 설정
+    // var basketCountSpan = document.getElementById('basket_count');
 
-    profileMenu.addEventListener('mouseleave', function () {
-        profileMenu.style.display = 'none';
-    });
-*/
-    // 물품 개수 동적으로 설정
-    var basketCountSpan = document.getElementById('basket_count');
-
-    // 서버에서 받은 물품 개수 값으로 설정 (예: 5개)
-    var itemCountFromServer = 5;
-    basketCountSpan.textContent = itemCountFromServer;
+    // // 서버에서 받은 물품 개수 값으로 설정 (예: 5개)
+    // var itemCountFromServer = 5;
+    // basketCountSpan.textContent = itemCountFromServer;
 
 </script>
     

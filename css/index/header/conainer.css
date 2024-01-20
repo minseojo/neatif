@@ -1,117 +1,12 @@
-/* header */
-body {
-    width: 100%;
-    height: 100%;
-}
-
-ul, ol {
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-li {
-    margin: 0;
-    padding: 0;
-    border : 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-.header {
-    margin-top: 1%;
-    width: 100%;
-    height: 15%;
-    position: relative;
-    display: flex;
-    order: -1;
-}
-
-.header ul {
-    width: 80%;
-    margin-right: 5%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end; /* 요소들을 오른쪽으로 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-}
-
-.header ul li {
-    margin-right: 1%;
-}
-
-.header .main_logo {
-    margin-top: 1%;
-    margin-left: 1%;
-    width: 20%;
-    height: 20%;
-}
-
-.header_menu_list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.header_menu_list li {
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.header_menu_list a {
-    display: flex;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border: 1px solid black;
-    margin: 5px;
-}
-
-/* 장바구니 */
-
-.header .basket {
-    position: relative;
-    align-items: center; /* 세로 중앙 정렬 */
-}
-
-.header .basket a img {
-    width: 35px;
-    height: 35px;
-    padding:0;
-}
-
-/* 물품 개수를 표시하는 span의 스타일링 */
-.header .basket .number span {
-    position: absolute;
-    top: 13%;
-    left: 53%;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 3px 6px;
-    font-size: 12px;
-    margin-left: 5px; /* 간격을 조절 */
-}
-
-
-
 
 /* article*/
 article {
     width: 80%;
     height: 80%;
+    position: absolute;
+    left: 20%;
 }
 
-.container {
-    width: 85%;
-    height: 70%;
-    left: 20%;
-    position: relative;
-}
 
 .container .best .title {
     margin-top: 5%;
@@ -230,7 +125,7 @@ article {
 
 
 .container .top .nav{
-    margin-top: 38%;
+    margin-top: 35%;
     width: 80%;
     height: 20%;
     position: absolute;
@@ -297,54 +192,14 @@ article {
 
 .container .main .product_list {
     position: absolute;
-    margin-top: 45%;
+    margin-top: 40%;
 }
 
 
-
-aside {
-    margin-left: 1%;
-    width: 20%;
-    height: 75%;
-}
-
-/* aside category */
-.aside .category {
-    width: 10%;
-    position: relative;
-    left: 5%;
-}
-
-.aside .category .top a {
-    font-size: 22px;
-}
-
-.aside .category .top {
-    margin-bottom: 20px;
-}
-
-.aside .category ul {
-    display: flex;
-    flex-direction: column; /* 수직 방향으로 나열 */
-}
-
-.aside .category ul li {
-    margin-bottom: 10px; /* 각 항목 사이의 간격 조절 */
-}
-
-.aside .category ul li a {
-    color: #333;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.aside .category ul li a:hover {
-    color: #ff5733;
-}
 
 .container .main  {
     width: 80%;
-    margin-top: 4%;
+    margin-top: 9%;
     position: absolute;
 }
 

@@ -1,0 +1,438 @@
+/* header */
+body {
+    width: 100%;
+    height: 100%;
+}
+
+ul, ol {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    border : 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* article*/
+article {
+    width: 80%;
+    height: 80%;
+}
+
+.container {
+    width: 85%;
+    height: 70%;
+    left: 20%;
+    position: absolute;
+}
+
+.container .best .title {
+    margin-top: 5%;
+    width: 80%;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    display: flex;
+}
+.container .best .title::before {
+    content:"";
+    flex-grow: 1;
+    margin: 0px 16px;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}.container .best .title::after {
+     content:"";
+     flex-grow: 1;
+     margin: 0px 16px;
+     background-color: rgba(0, 0, 0, 0.35);
+     height: 1px;
+     font-size: 0px;
+     line-height: 0px;
+ }
+
+.container .product_list li {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.container .best .product_list .thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .best .product_list {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.container .best .product_list .description .name {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between; /* 다른 자식 요소 사이에 공간을 만듭니다. */
+    align-items: center;
+}
+
+.container .best .product_list .description .name a {
+    font-size: 15px;
+    color: black;
+}
+
+.container .best .product_list .description .line {
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .best .product_list .description .name .icon_best {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    border: 1px solid red;
+    color: white;
+    background: red;
+}
+
+.container .best .product_list .description .price {
+    width: 100%;
+    margin-top: 5%;
+}
+
+.container .category {
+    width: 80%;
+    margin-top: 30%;
+    position: absolute;
+}
+
+.container .category p{
+    font-weight: bold;
+    text-align: center;
+}
+
+.container .category .category_list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+}
+
+.container .category .category_list li {
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    margin-left:1%;
+    margin-right:1%;
+}
+
+.container .category .category_list li a {
+    color: black;
+}
+.container .category .category_list li a:hover {
+    color:#ff5733;
+}
+
+
+.container .top .nav{
+    margin-top: 35%;
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.container .top .menu{
+    margin-top: 5%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.container .top ol {
+    display: flex; /* Flexbox로 설정하여 수평으로 나열 */
+    padding: 0;
+    margin-left: 1%;
+}
+
+.container .top .menu ul{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
+}
+
+.container .top .menu ul li a{
+    justify-content: flex-end;
+    margin-right: 10px; /* 간격 조절 */
+}
+
+.container .top .menu a {
+    color: #333;
+    font-size: 14px;
+}
+
+.container .top .menu a:hover {
+    color: #ff5733;
+}
+
+.container .top .line1 {
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .top .line2 {
+    position: absolute;
+    margin-top: 10%;
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .main .product_list {
+    position: absolute;
+    margin-top: 40%;
+}
+
+
+
+.container .main  {
+    width: 80%;
+    margin-top: 9%;
+    position: absolute;
+}
+
+.container .main .product_list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container .main .product_list li {
+    width: calc(22%); /* 간격을 조절하려면 40px(총 간격)을 제외합니다. */
+    box-sizing: border-box;
+    margin-top: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: center;
+}
+
+.container .main .product_list .thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .best .product_list {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.container .main .product_list .description .name {
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between; /* 다른 자식 요소 사이에 공간을 만듭니다. */
+    align-items: center;
+}
+
+.container .main .product_list .description .name a {
+    font-size: 15px;
+    color: black;
+}
+
+.container .main .product_list .description .line {
+    width: 100%;
+    content:"";
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.35);
+    margin: 0;
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+.container .main .product_list .description .name .icon_best {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    border: 1px solid red;
+    color: white;
+    background: red;
+}
+
+.container .main .product_list .description .price {
+    width: 100%;
+    text-align: left;
+    margin-top: 5%;
+}
+
+
+
+
+
+.aside {
+    margin-top: 1%;
+    margin-left: 2%;
+    width: 15%;
+    height: 100%;
+    position: fixed;
+}
+
+.aside .main_logo {
+    height: 8%;
+}
+
+.aside .aside_menu_list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.aside .aside_menu_list li {
+    margin-top: 1%;
+    width: calc(33%);
+}
+
+.aside .aside_menu_list a {
+    display: flex;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    justify-content: start;
+    margin: 0;
+}
+
+/* 장바구니 */
+.aside .basket {
+    position: relative;
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.aside .basket a img {
+    width: 25px;
+    height: 25px;
+    padding:0;
+}
+
+/* 물품 개수를 표시하는 span의 스타일링 */
+.aside .basket .number {
+    position: absolute;
+    top: -1%;
+    left: 20%;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 12px;
+    margin-left: 5px; /* 간격을 조절 */
+}
+
+
+
+/* aside category */
+.aside .category {
+    margin-top: 5%;
+    width: 10%;
+    margin-left: 2%;
+    position: relative;
+}
+
+.aside .category .top a {
+    font-size: 22px;
+}
+
+.aside .category .top {
+    margin-bottom: 20px;
+}
+
+.aside .category ul {
+    display: flex;
+    flex-direction: column; /* 수직 방향으로 나열 */
+}
+
+.aside .category ul li {
+    margin-bottom: 10px; /* 각 항목 사이의 간격 조절 */
+}
+
+.aside .category ul li a {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.aside .category ul li a:hover {
+    color: #ff5733;
+}
+
+.aside .info {
+    font-size: 13px;
+}
+
+
+.aside .search_container {
+    width: 100%;
+    left: -5%;
+    position: relative;
+    margin-top: 10%;
+    align-items: center;
+}
+
+.search_input {
+    width: 140px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search_input:focus {
+    outline: none;
+    border-color: yellowgreen;
+}
+
+.search_submit {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search_submit img {
+    width: 20px;
+    height: 20px;
+}
