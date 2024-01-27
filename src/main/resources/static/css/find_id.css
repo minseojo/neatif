@@ -1,0 +1,61 @@
+.container .main {
+    width: 80%;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.container h1, .container h2 {
+    text-align: center;
+}
+.container h1 {
+    margin-top: 5%;
+    font-size: 20px;
+}
+.container h2 {
+    margin-top: 1%;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.container .main {
+    border: 1px solid #ccc;
+}
+.container .main .form {
+    margin-top: 3%;
+}
+
+.container .checked {
+    flex-direction: column;
+}
+.container .checked li {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    text-align: center;
+    display: inline;
+    justify-content: space-between;
+}
+.container .checked input,
+.container .checked select {
+    width: 20%;
+    padding: 8px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.container .main input[type="submit"] {
+    margin-top: 2%;
+    width: 30%;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.container input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+}

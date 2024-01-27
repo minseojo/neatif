@@ -1,33 +1,5 @@
-article {
-    margin-top: 0;
-}
 .container {
     height: 80%;
-}
-.container .slide ul {
-    display: flex;
-}
-.container .slide ul li img {
-    width: 100%;
-    height: 100%;
-}
-.container .slide ul li {
-    width: calc(30%)
-}
-
-.container h1 {
-    font-size: 20px;
-}
-.container h2 {
-    font-size: 14px;
-    color: black;
-    font-weight: 300;
-}
-.container .title{
-    margin-top: 10%;
-    margin-bottom: 2%;
-    width: 90%;
-    text-align: center;
 }
 
 .container .best .title {
@@ -46,14 +18,14 @@ article {
     font-size: 0px;
     line-height: 0px;
 }.container .best .title::after {
-     content:"";
-     flex-grow: 1;
-     margin: 0px 16px;
-     background-color: rgba(0, 0, 0, 0.35);
-     height: 1px;
-     font-size: 0px;
-     line-height: 0px;
- }
+    content:"";
+    flex-grow: 1;
+    margin: 0px 16px;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
 
 .container .item_list li {
     margin-left: 2%;

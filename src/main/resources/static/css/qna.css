@@ -1,0 +1,68 @@
+.container .title {
+    width: 90%;
+    font-weight: 200;
+    text-align: center;
+}
+
+.container .main {
+    width: 90%;
+    margin-top: 2%;
+    border: 1px solid #ccc;
+}
+.container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container th, .container td {
+    font-weight: 350;
+    text-align: center;
+}
+.container th {
+    padding: 14px;
+    border-right: 1px solid #ccc;
+    background-color:whitesmoke;
+    color: black;
+}
+.container td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+.container td:first-child, .container th:first-child {
+    border-left: none;
+}
+.container td:last-child, .container th:last-child {
+    border-right: none;
+}
+.container .main_footer fieldset {
+    border: none;
+}
+.container .main_footer {
+    display: flex;
+    justify-content: space-between;
+    width: 97.5%;
+    padding: 14px;
+    border-top: none;
+}
+
+.container .main_footer select {
+    padding: 8px;
+}
+.container .main_footer input {
+    padding: 8px;
+}
+.container .main_footer a {
+    padding: 8px 30px 8px 30px;
+    font-size: 14px;
+    border: 1px solid black;
+}
+
+.main_footer input[type="submit"], .main_footer input[type="button"] {
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.main_footer input[type="submit"]:hover, .container .main_footer a:hover {
+    background-color: black;
+    color: white;
+}

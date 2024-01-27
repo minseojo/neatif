@@ -1,0 +1,35 @@
+footer {
+    margin-top: 30%;
+    width: 105%;
+    right: 5%;
+    display: flex;
+    position: relative;
+    background-color: hsl(0, 0%, 98%);
+    font-weight: 350;
+    font-size: 14px;
+}
+
+footer p {
+    font-weight: 500;
+    font-size: 14px;
+}
+footer .box1{
+    width: 25%;
+    margin-top: 5%;
+    margin-left: 3%;
+}
+
+footer .box2 {
+    width: 70;
+    margin-top: 5%;
+}
+
+footer .box3 {
+    width: 5%;
+    text-align: right;
+    margin-top: 5%;
+}
+
+footer pre {
+    color:hsl(0, 0%, 33%);
+}

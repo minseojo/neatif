@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<aside class="aside" th:fragment="aside">
+    <div class="main_logo">
+        <a href="/">
+            <img src="/img/logo.png">
+        </a>
+    </div>
+
+    <ul class="aside_menu_list">
+        <li>
+            <a href="/login">LOGIN</a>
+        </li>
+        <li>
+            <a href="/join">JOIN US</a>
+        </li>
+        <li>
+            <a href="/my">MY PAGE</a>
+        </li>
+        <li>
+            <a href="/notice">NOTICE</a>
+        </li>
+        <li>
+            <a href="/qna">Q&A</a>
+        </li>
+        <li>
+            <a href="/review">REVIEW</a>
+        </li>
+
+    </ul>
+
+    <div class="category">
+        <ul class="top">
+            <!-- New Arrivals 링크 -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).NEW_ARRIVALS.id})}">New&nbsp;Arrivals</a>
+            </li>
+
+            <!-- Best 24 링크 -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).BEST_24.id})}">Best&nbsp;24</a>
+            </li>
+        </ul>
+
+        <ul>
+            <!--  Outer -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).OUTER.id})}">Outer</a>
+            </li>
+            <!--  Top -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).TOP.id})}">Top</a>
+            </li>
+            <!--  Shirts -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).SHIRTS.id})}">Shirts</a>
+            </li>
+            <!--  Pants -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).PANTS.id})}">Pants</a>
+            </li>
+            <!--  Suit -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).SUIT.id})}">Suit</a>
+            </li>
+            <!--  Bag/Shoes -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).BAG_SHOES.id})}">Bag/Shoes</a>
+            </li>
+            <!--  Acc -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).ACC.id})}">Acc</a>
+            </li>
+            <!--  Sail -->
+            <li>
+                <a th:href="@{/items/list(category_large_code=${T(com.minseojo.neatif.domain.item.CategoryLargeCode).SAIL.id})}">Sail</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="info" style="margin-top: 10%;" >
+        <p>고객센터&nbsp;&nbsp;<strong>010-5023-9977</strong></p>
+        <ul>
+            <li>MON-FRI PM 12:00 – PM 6:00</li>
+            <li>LUNCH TIME PM 13:00 – 14:00</li>
+            <li>SAT.SUN.HOLIDAY OFF</li>
+        </ul>
+
+        <ul style="margin-top: 10%;">
+            <p>은행 정보</p>
+            <li>우체국 402339-02-309137</li>
+            <li>IBK기업 010-5023-9977</li>
+            <li>예금주 : 조민서</li>
+        </ul>
+
+
+        <form class="search_container">
+            <button type="submit" class="search_submit" onclick="handleSearch(event)">
+                <img src="/img/glass_icon.png" alt="Search Icon">
+            </button>
+            <input type="text" class="search_input"
+                   placeholder="Store item search" id="search_input">
+        </form>
+    </div>
+</aside>

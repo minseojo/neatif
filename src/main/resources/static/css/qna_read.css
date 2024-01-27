@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    left: 23%;
+}
+
+.container .main {
+    width: 90%;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.main .header {
+    width: 90%;
+    height: 15%;
+    margin-top: 5%;
+    margin-left: 5%;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.main .content {
+    height: 68%;
+    width: 86%; /* 원하는 가로 길이로 조절 */
+    margin: 0 auto; /* 가운데 정렬을 위한 마진 설정 */
+    margin-top: 1%;
+    font-size: 16px; /* 폰트 크기 설정 등 다양한 스타일링이 가능 */
+    line-height: 2.5; /* 줄 간격 설정 */
+    overflow: scroll;
+}
+
+.main .footer {
+    margin-bottom: 1%;
+    text-align: right;
+}
+
+.main .footer a {
+    background-color: white;
+    padding: 1% 4% 1% 4%;
+    font-size: 14px;
+    border: 1px solid black;    
+}
+
+.main .footer a:hover {
+    background-color: black;
+    color: white;
+}

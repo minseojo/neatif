@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neatif if you com with us, NEAT IF</title>
+  <link rel="stylesheet" href="/css/aside.css" type="text/css" />
+  <link rel="stylesheet" href="/css/index.css" type="text/css" />
+  <link rel="stylesheet" href="/css/footer.css" type="text/css" />
+
+</head>
+
+<body>
+<div th:replace="~{fragments/aside.html :: aside}"/>
+
+<article class="container" style="margin-top: 0; top: -1%;">
+  <div class="slide">
+    <ul>
+      <li><img src="/img/best1.png"></li>
+      <li><img src="/img/best2.png"></li>
+      <li><img src="/img/best3.png"></li>
+    </ul>
+  </div>
+
+  <div class="title">
+    <h1 th:text="${title}"></h1>
+    <h2 th:text="${sub_title}"></h2>
+  </div>
+
+  <div class="main">
+    <div class="content">
+      <div class="item_list">
+        <ul>
+          <!-- Loop through the items -->
+          <li th:each="item : ${items}">
+            <div class="thumbnail">
+              <a th:href="@{/items/{id}(id=${item.id})}" style="height: 300px; display: inline-block;">
+                <img th:src ="@{/images/} + ${item.getImageFiles().get(0).getStoreFileName}">
+              </a>
+            </div>
+
+            <div class="description">
+              <ul>
+                <li class="name">
+                  <a th:href="@{/items/{id}(id=${item.id})}" th:text="${item.name}"></a>
+                  <p class="icon_best" th:if="${item.bestSeller}">best</p>
+                </li>
+                <li class="line"></li>
+                <li class="price" th:text="'KRW ' + ${#numbers.formatInteger(item.price, 3, 'COMMA')}"></li>
+              </ul>
+            </div>
+          </li>
+          <!-- End of item loop -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div th:replace="~{fragments/footer.html :: footer}"/>
+</article>
+
+<script>
+  function handleSearch(event) {
+    const searchInput = document.getElementById('search_input');
+    if (searchInput.value.trim() === "") {
+      alert("검색어를 입력해주세요");
+      return;
+    }
+  }
+
+  // // 물품 개수 동적으로 설정
+  // var basketCountSpan = document.getElementById('basket_count');
+
+  // // 서버에서 받은 물품 개수 값으로 설정 (예: 5개)
+  // var itemCountFromServer = 5;
+  // basketCountSpan.textContent = itemCountFromServer;
+
+</script>
+
+
+</body>
+</html>

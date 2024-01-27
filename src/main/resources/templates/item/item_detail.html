@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neatif if you com with us, NEAT IF</title>
+  <link rel="stylesheet" href="/css/aside.css" type="text/css" />
+  <link rel="stylesheet" href="/css/item.css" type="text/css" />
+  <link rel="stylesheet" href="/css/footer.css" type="text/css" />
+</head>
+
+<body>
+<div th:replace="~{fragments/aside.html :: aside}"/>
+<article class="container" th:object="${item}">
+  <div class="main" >
+    <div class="top">
+      <div class="thumbnail">
+        <div id="imageContainer">
+          <div th:each="image, status : ${item.imageFiles}">
+            <img th:src="@{/images/} + ${image.storeFileName}" alt="Item Image" style="height: 550px; display: inline-block;">
+          </div>
+        </div>
+        <button onclick="changeImage(-1)">Previous</button>
+        <button onclick="changeImage(1)">Next</button>
+
+        <!--        <div th:each="image : ${item.getImageFiles()}">-->
+<!--            <img th:src="@{/images/} + ${image.getStoreFileName}" alt="Item Image" style="height: 550px; display: inline-block;">-->
+<!--        </div>-->
+      </div>
+
+      <div class="item_info">
+        <div class="description">
+          <ul>
+            <li class="name">
+              <p class="icon_best" th:if="${item.bestSeller}">best</p>
+              <a th:text="${item.name}"></a>
+            </li>
+            <li class="line"></li>
+            <li class="price" th:text="${#numbers.formatInteger(item.price, 3, 'COMMA')} + ' 원'"></li>
+          </ul>
+        </div>
+
+        <div class="tab_wrab">
+          <ul class="tabs">
+            <li class="active">
+              <a href="#tab1">SIZE GUIDE</a>
+            </li>
+            <li>
+              <a href="#tab2">DETAIL</a>
+            </li>
+            <li>
+              <a href="#tab3">COMMENT</a>
+            </li>
+          </ul>
+
+          <div class="tab_container">
+            <ul>
+              <li id="tab1" class="btnCon">
+                <div class="tab_inner">
+                  <table>
+                    <thead>
+                    <tr>
+                      <th></th>
+                      <th>어깨</th>
+                      <th>가슴</th>
+                      <th>소매</th>
+                      <th>총 길이</th>
+                      <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td>S</td>
+                      <td>40.0cm</td>
+                      <td>90.0cm</td>
+                      <td>60.0cm</td>
+                      <td>65.0cm</td>
+                    </tr>
+                    <tr>
+                      <td>M</td>
+                      <td>42.0cm</td>
+                      <td>95.0cm</td>
+                      <td>62.0cm</td>
+                      <td>67.0cm</td>
+                    </tr>
+                    <tr>
+                      <td>L</td>
+                      <td>44.0cm</td>
+                      <td>100.0cm</td>
+                      <td>64.0cm</td>
+                      <td>70.0cm</td>
+                    </tr>
+                    <tr>
+                      <td colspan="5">사이즈 재는 방법에 따라 1~2cm 정도의 오차가 있을 수 있습니다</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </li>
+
+              <li id="tab2" class="btnCon">
+                <div class="tab_inner">
+                                    <pre>
+    FABRIC : 아크릴 100%
+    MODEL FITTING :  L 사이즈 착용
+    신축성 : 높음
+    두께 : 중간
+    비침 : 없음
+
+    LAUNDRY : 모든 의류의 첫 세탁은 손세탁 및 드라이클리닝을 권장합니다.
+    PRODUCTION : 제조자 - 모던이프 제휴업체 / 제조국 - 대한민국 / 제조년월 - 2022년 12월
+    품질보증기간 - 소비자 분쟁 해결 기준에 따름 / AS책임자와 고객센터 - 1522-4953
+                                    </pre>
+                </div>
+              </li>
+
+              <li id="tab3" class="btnCon">
+                <div class="tab_inner">
+                                    <pre>
+    부드럽고 가벼운 원사로 짜여진
+    케이블 라운드 니트입니다.
+
+    세미 오버핏 디자인으로 자연스럽게
+    내려오는 어깨라인과 여유있는 가슴 너비로
+    입었을때 편안하게 착용가능하며 캐쥬얼 한
+    실루엣으로 연출하실 수 있습니다.
+
+    기본적인 라운드 니트 디자인에 케이블 짜임과
+    매력적인 컬러구성으로 코디에서 단품만으로도
+    코디의 포인트를 줄 수 있는 아이템입니다.
+                                    </pre>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="item_option">
+          <table>
+            <tbody>
+            <tr >
+              <td class="selector_title">size</td>
+              <td>
+                <div>
+                  <select class="selector" name="size" id="size">
+                    <option value="none">size</option>
+                    <option value="disabled" disabled>------------</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="selector_title">color</td>
+              <td>
+                <div>
+                  <select class="selector" name="color" id="color">
+                    <option value="none">color</option>
+                    <option value="disabled" disabled>------------</option>
+                    <option value="white">White</option>
+                    <option value="black">Black</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <p class="item_price">
+            총&nbsp;합계&nbsp;금액&nbsp;<span style="font-size: 16px;">(수량)</span> :
+            <span style="font-weight: bold;">
+              <span class="price" th:text="'KRW ' + ${#numbers.formatInteger(item.price, 3, 'COMMA')}"></span>
+            </span>
+
+            <span style="font-size: 16px;">(1개)</span>
+          </p>
+        </div>
+
+        <ul class="info_buttons">
+          <li>
+            <a href="#tab1" id="buyItNow">BUY IT NOW</a>
+          </li>
+          <li>
+            <a href="#tab2" id="addToCart">ADD TO CART</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content" style="margin-top: 20%">
+      <div class="content_menu">
+        <div class="guide">
+          <li class="detail">
+            <a href="#tab1">디테일</a>
+          </li>
+          <li class="deliveryAndExchange">
+            <a href="#">배송 및 교환 안내</a>
+          </li>
+          <li class="review">
+            <a href="#">구매 후기 (<span id="review_count">0</span>)</a>
+          </li>
+          <li class="qna">
+            <a href="#">상품 문의 (<span id="qna_count">0</span>)</a>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div th:replace="~{fragments/footer.html :: footer}"/>
+</article>
+<script>
+  showImage(0);
+  location.href = "#tab1";
+
+  function handleSearch(event) {
+    const searchInput = document.getElementById('search_input');
+    if (searchInput.value.trim() === "") {
+      alert("검색어를 입력해주세요");
+      return;
+    }
+  }
+
+  // tab 클릭시 active 변경하기
+  document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll('.tabs li');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        // 모든 탭에서 active 클래스 제거
+        tabs.forEach(t => t.classList.remove('active'));
+
+        // 클릭한 탭에 active 클래스 추가
+        this.classList.add('active');
+      });
+    });
+  });
+
+
+  var currentIndex = 0;
+
+  const imageSize = [[${item.imageFiles.size()}]];
+
+  function changeImage(offset) {
+    currentIndex += offset;
+    if (currentIndex < 0) {
+      currentIndex = imageSize - 1;
+    } else if (currentIndex >= imageSize) {
+      currentIndex = 0;
+    }
+
+    showImage(currentIndex);
+  }
+
+  function showImage(index) {
+    var imageContainers = document.querySelectorAll('#imageContainer > div');
+    imageContainers.forEach(function (element, i) {
+      if (i === index) {
+        element.classList.add('current');
+        element.style.display = 'inline-block'; // 보이게 설정
+      } else {
+        element.classList.remove('current');
+        element.style.display = 'none'; // 숨김으로 설정
+      }
+    });
+  }
+    /*]]>*/
+</script>
+
+
+</body>
+</html>

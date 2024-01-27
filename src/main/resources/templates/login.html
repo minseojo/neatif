@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neatif if you com with us, NEAT IF</title>
+    <link rel="stylesheet" href="/css/aside.css" type="text/css" />
+    <link rel="stylesheet" href="/css/login.css" type="text/css" />
+    <link rel="stylesheet" href="/css/footer.css" type="text/css" />
+</head>
+<body>
+<div th:replace="~{fragments/aside.html :: aside}"/>
+<article class="container">
+    <div class="main">
+        <h2>Login</h2>
+        <div class="login" action="#" method="post">
+            <fieldset>
+                <form class="login_form">
+                    <ul class="form_group">
+                        <li>
+                            <label for="userId" hidden>MEMBER ID</label>
+                            <input type="text" id="userId" name="userId" placeholder="MEMBER ID" required>
+                        </li>
+
+                        <li>
+                            <label for="password" hidden>PASSWORD</label>
+                            <input type="password" id="password" name="password" placeholder="PASSWORD" required>
+                        </li>
+                    </ul>
+
+
+                <div class="login_btn">
+                    <ul class="left">
+                        <li><a href="join.html">JOIN</a></li>
+                        <li><a href="find_id.html">FORGOT ID</a></li>
+                        <li><a href="member/find_password.html">FORGOT PW</a></li>
+                    </ul>
+                    <ul class="right">
+                        <li>
+                            <input type="submit" value="LOGIN"></input>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            </fieldset>
+        </div>
+    </div>
+    <div th:replace="~{fragments/footer.html :: footer}"/>
+</article>
+    
+</body>
+</html>
