@@ -18,14 +18,14 @@
     font-size: 0px;
     line-height: 0px;
 }.container .best .title::after {
-    content:"";
-    flex-grow: 1;
-    margin: 0px 16px;
-    background-color: rgba(0, 0, 0, 0.35);
-    height: 1px;
-    font-size: 0px;
-    line-height: 0px;
-}
+     content:"";
+     flex-grow: 1;
+     margin: 0px 16px;
+     background-color: rgba(0, 0, 0, 0.35);
+     height: 1px;
+     font-size: 0px;
+     line-height: 0px;
+ }
 
 .container .item_list li {
     margin-left: 2%;

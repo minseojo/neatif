@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neatif if you com with us, NEAT IF</title>
+    <link rel="stylesheet" href="/css/aside.css?after" type="text/css" />
+    <link rel="stylesheet" href="/css/footer.css?after" type="text/css" />
+
+</head>
+
+<body>
+<div th:replace="~{fragments/aside.html :: aside}"/>
+
+<article class="container">
+    <form th:action="@{/items/update/} + ${item.id}" th:object="${item}" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            <label th:for="name">상품명</label>
+            <input type="text" th:field="*{name}" class="form-control" placeholder="이름을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label th:for="price">가격</label>
+            <input type="number" th:field="*{price}" class="form-control" placeholder="가격을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label th:for="stockQuantity">수량</label>
+            <input type="number" th:field="*{stockQuantity}" class="form-control" placeholder="수량을 입력하세요">
+        </div>
+
+        <div class="form-group">
+            <label th:for="itemDetail">상품 설명</label>
+            <textarea th:field="*{itemDetail}"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label th:for="bestSeller">베스트 셀러</label>
+            <input type="radio" th:field="*{bestSeller}" th:value="true">O
+            <input type="radio" th:field="*{bestSeller}" th:value="false">X
+        </div>
+
+        <div class="form-group">
+            <label th:for="itemLargeCode">상품 주 카테고리</label>
+            <select id="largeCategory" th:field="*{itemLargeCode}" onchange="updateMediumCategories()">
+                <option th:each="category : ${T(com.minseojo.neatif.domain.item.ItemLargeCode).values()}"
+                        th:unless="${category == T(com.minseojo.neatif.domain.item.ItemLargeCode).NEW_ARRIVALS
+                  or category == T(com.minseojo.neatif.domain.item.ItemLargeCode).BEST_24 }"
+                        th:value="${category}" th:text="${category.displayName}">
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="itemMediumCode">상품 부 카테고리</label>
+            <select id="mediumCategory" th:field="*{itemMediumCode}">
+                <!-- 추가: 동적으로 변경될 옵션들을 표시할 영역 -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label th:for="imageFiles"> 이미지 업로드</label>
+            <div th:each="image, imageIndex : ${item.getImageFiles()}" style="display: flex">
+                <img th:src="@{/images/} + ${image.getStoreFileName()}" style="width: 200px; height: 200px;">
+                <button type="button" onclick="removeImage(${imageIndex.index})">삭제</button>
+            </div>
+            <input type="file" multiple="multiple" th:field="*{imageFiles}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">수ㅅ</button>
+    </form>
+
+    <br/>
+    <div th:replace="~{fragments/footer.html :: footer}" />
+</article> <!-- /container -->
+</body>
+
+<script>
+    function removeImage(index) {
+        // 해당 인덱스의 이미지를 제거하는 로직 작성
+        // 예: 이미지를 화면에서 제거하거나, 서버에 삭제 요청을 보내는 등의 작업
+        console.log('Remove image at index: ' + index);
+    }
+
+    function updateMediumCategories() {
+        var largeCategory = document.getElementById("largeCategory");
+        var mediumCategory = document.getElementById("mediumCategory");
+
+        // 선택된 대 카테고리의 값을 가져옴
+        var selectedLargeCategory = largeCategory.value;
+
+        // Ajax 요청을 통해 서버에 부 카테고리 목록 요청
+        fetch('/api/mediumCategories?largeCategory=' + selectedLargeCategory)
+            .then(response => response.json())
+            .then(data => {
+                // 부 카테고리 목록을 초기화
+                mediumCategory.innerHTML = '';
+
+                // 가져온 부 카테고리 목록을 동적으로 추가
+                data.forEach(function(category) {
+                    var option = document.createElement("option");
+                    option.value = category;
+                    option.text = category;
+                    mediumCategory.add(option);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // 페이지 로딩 시 초기화
+    updateMediumCategories();
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neatif if you com with us, NEAT IF</title>
+    <script type="text/javascript" src="load.js"></script>
+    <link rel="stylesheet" href="css/index/header/aside.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/header/footer.css" type="text/css" />
+    <link rel="stylesheet" href="css/index/header/find_id.css" type="text/css" />
+
+</head>
+
+<body>
+<div id="aside_container" include-html="aside.html"></div>
+<article class="container">
+    <div class="main">
+        <h1>아이디 찾기</h1>
+        <h2>이메일 또는 휴대전화번호로 아이디 찾기가 가능합니다. <br>찾기가 어려우시면, 고객센터로 문의주세요</h2>
+        <form class="form">
+            <fieldset style="border: 0;">
+                <li class="choice">
+                    <input type="radio" id="check" name="check" value="이메일" checked>이메일
+                    <input type="radio" id="check" name="check" value="휴대폰번호">휴대폰번호
+                </li>
+        
+                <ul class="checked">
+                    <li class="type">
+                        <label>&nbsp;&nbsp;TYPE&nbsp;&nbsp;</label>
+                        <select name="type">
+                            <option value="개인회원">개인회원</option>
+                            <option value="외국인회원(foreigner)">외국인회원(foreigner)</option>
+                        </select>
+                    </li>
+                    <li class="username">
+                        <label>USERNAME</label>
+                        <input type="text" name="username">
+                    </li>
+                    <li class="email">
+                        <label>E&nbsp;MAIL</label>
+                        <input type="email" name="email">
+                    </li>
+    
+    
+                    <li class="mobile">
+                        <label>&nbsp;MOBILE&nbsp;</label>
+                        <input type="text" name="mobile1" style="width: 133px;">&nbsp;-&nbsp;
+                        <input type="text" name="mobile2" style="width: 133px;">&nbsp;-&nbsp; 
+                        <input type="text" name="mobile3" style="width: 133px;">
+                    </li>
+                </ul>
+
+
+
+                <input type="submit" value="FIND ID">
+            </fieldset>
+        </form>
+    </div>
+    <div id="footer_container" include-html="footer.html"></div>
+</article>
+    
+</body>
+</html>

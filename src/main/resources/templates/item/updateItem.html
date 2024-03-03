@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neatif if you com with us, NEAT IF</title>
+    <link rel="stylesheet" href="/css/aside.css" type="text/css" />
+    <link rel="stylesheet" href="/css/footer.css" type="text/css" />
+
+</head>
+
+<body>
+<div th:replace="~{fragments/aside.html :: aside}"/>
+<article class="container">
+    <table class="item_list" style="width: 80%; height: 300px;" >
+        <thead>
+            <tr>
+                <th>상품 ID</th>
+                <th>상품명</th>
+                <th>가격</th>
+                <th>수량</th>
+                <th>상품 설명</th>
+                <th>베스트 셀러</th>
+                <th>상품 주 카테고리</th>
+                <th>상품 부 카테고리</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="item : ${items}" style="text-align: center">
+            <td>
+                <div class="form-group">
+                    <p th:text="${item.id}"></p>
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    <p th:text="${item.name}"></p>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <p th:text="${item.price}"></p>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <p th:text="${item.stockQuantity}"></p>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <textarea th:text="${item.itemDetail}" readonly></textarea>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <p th:if="${item.isBestSeller()}" th:text="O"></p>
+                    <p th:if="${!item.isBestSeller()}" th:text="X"></p>
+                </div>
+            </td>
+            <td>
+                <div class="form-group">
+                    <p th:text="${item.itemLargeCode}"></p>
+                </div>
+            </td>
+
+            <td>
+                <div class="form-group">
+                    <p th:text="${item.itemMediumCode}"></p>
+                </div>
+            </td>
+
+            <td>
+                <button type="button">
+                    <a th:href="@{/items/update/{id}(id=${item.id})}" style="display: inline-block;" th:text="수정"></a>
+                </button>
+            </td>
+
+            <td>
+                <button type="button" class="btn btn-primary" th:onclick="deleteItem([[${item.id}]])">제거</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:replace="~{fragments/footer.html :: footer}"/>
+</article> <!-- /container -->
+</body>
+<script>
+    function deleteItem(itemId) {
+        console.log(itemId);
+        if (confirm("정말로 삭제하시겠습니까?")) {
+            // AJAX를 사용하여 아이템 삭제 요청을 서버에 보냄
+            var xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "/items/" + itemId, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // 삭제 성공 시 화면 갱신 또는 다른 동작 수행
+                    // 예: 페이지 새로고침
+                    location.reload();
+                }
+            };
+            xhr.send();
+        }
+    }
+</script>
+</html>

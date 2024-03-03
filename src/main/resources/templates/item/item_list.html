@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neatif if you com with us, NEAT IF</title>
-  <link rel="stylesheet" href="/css/menu.css" type="text/css" />
+  <link rel="stylesheet" href="/css/item_list.css" type="text/css" />
   <link rel="stylesheet" href="/css/aside.css" type="text/css" />
   <link rel="stylesheet" href="/css/footer.css" type="text/css" />
 
@@ -22,11 +22,16 @@
       <ul class="item_list">
         <li th:each="item : ${bestItems}">
           <div class="thumbnail">
-            <div th:each="image : ${item.getImageFiles()}">
+            <div>
               <a th:href="@{/items/{id}(id=${item.id})}" style="width: 230px; height: 300px; display: inline-block;">
-                <img th:src="@{/images/} + ${image.getStoreFileName}" alt="Item Image">
+                <img th:src="@{/images/} + ${item.getImageFiles().get(0).getStoreFileName}" alt="Item Image">
               </a>
             </div>
+<!--            <div th:each="image : ${item.getImageFiles()}">-->
+<!--              <a th:href="@{/items/{id}(id=${item.id})}" style="width: 230px; height: 300px; display: inline-block;">-->
+<!--                <img th:src="@{/images/} + ${image.getStoreFileName}" alt="Item Image">-->
+<!--              </a>-->
+<!--            </div>-->
           </div>
 
           <div class="description">
@@ -51,12 +56,14 @@
 
         <!--카테고리의 자식 데이터-->
         <ul class="category_list">
-          <li><a href="#">자켓</a></li>
-          <li><a href="#">수트</a></li>
-          <li><a href="#">코트</a></li>
-          <li><a href="#">점퍼/짚업</a></li>
+          <li th:each="category : ${subCategory}">
+            <a th:href="@{/items/list(item_large_code=${category.itemLargeCode.id}, item_medium_code=${category.id})}">
+              <span th:text="${category.displayName}"></span>
+            </a>
+          </li>
         </ul>
       </div>
+
       <div class="nav">
         <li class="line1"></li>
 
@@ -68,10 +75,11 @@
           </ol>
 
           <ul>
-            <li><a href="#">신상품순</a></li>
-            <li><a href="#">낮은가격순</a></li>
-            <li><a href="#">높은가격순</a></li>
-            <li><a href="#">리뷰순</a></li>
+            <li><a th:href="@{/items(item_large_code=${itemLargeCodeId}, item_medium_code=${itemMediumCodeId != null ? itemMediumCodeId : T(com.minseojo.neatif.domain.item.ItemMediumCode).DEFAULT.id}, sort_type=${T(com.minseojo.neatif.domain.item.SortType).NEW_ARRIVAL.id})}" th:text="${T(com.minseojo.neatif.domain.item.SortType).NEW_ARRIVAL.name}"></a></li>
+            <li><a th:href="@{/items(item_large_code=${itemLargeCodeId}, item_medium_code=${itemMediumCodeId != null ? itemMediumCodeId : T(com.minseojo.neatif.domain.item.ItemMediumCode).DEFAULT.id}, sort_type=${T(com.minseojo.neatif.domain.item.SortType).LOW_PRICE.id})}" th:text="${T(com.minseojo.neatif.domain.item.SortType).LOW_PRICE.name}"></a></li>
+            <li><a th:href="@{/items(item_large_code=${itemLargeCodeId}, item_medium_code=${itemMediumCodeId != null ? itemMediumCodeId : T(com.minseojo.neatif.domain.item.ItemMediumCode).DEFAULT.id}, sort_type=${T(com.minseojo.neatif.domain.item.SortType).HIGH_PRICE.id})}" th:text="${T(com.minseojo.neatif.domain.item.SortType).HIGH_PRICE.name}"></a></li>
+            <li><a th:href="@{/items(item_large_code=${itemLargeCodeId}, item_medium_code=${itemMediumCodeId != null ? itemMediumCodeId : T(com.minseojo.neatif.domain.item.ItemMediumCode).DEFAULT.id}, sort_type=${T(com.minseojo.neatif.domain.item.SortType).REVIEW.id})}" th:text="${T(com.minseojo.neatif.domain.item.SortType).REVIEW.name}"></a></li>
+
           </ul>
         </li>
 
@@ -120,22 +128,6 @@
       alert("검색어를 입력해주세요");
       return;
     }
-  }
-
-  function updateSort(sortType) {
-    // Ajax 요청을 보냄
-    $.ajax({
-      type: 'GET',
-      url: 'items/updateData',
-      data: { sortType: sortType },
-      success: function(data) {
-        // 서버에서 받은 HTML을 특정 div에 삽입
-        $('.item_list').html(data);
-      },
-      error: function() {
-        alert('데이터 업데이트에 실패했습니다.');
-      }
-    });
   }
 
   // // 물품 개수 동적으로 설정
