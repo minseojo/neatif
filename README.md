@@ -1,5 +1,3 @@
-화면 이미지 모음: https://github.com/minseojo/neatif/issues/4
-
 ## 현재 기능
 - 상품 등록 기능
   - 상품명, 가격, 수량
@@ -28,3 +26,25 @@
 - 장바구니 기능
 - 상품 구매 기능
 - 검색 기능
+
+## 화면 이미지 모음
+### 홈 화면
+<img width="1525" alt="스크린샷 2024-03-03 오후 9 31 39" src="https://github.com/minseojo/neatif/assets/64322765/7164848a-50a9-4f80-ad3b-1a23b8f6c62c">
+
+---
+
+### 상품 등록 화면
+<img width="1680" alt="스크린샷 2024-03-03 오후 9 38 51" src="https://github.com/minseojo/neatif/assets/64322765/efeaed35-ffdf-48c4-88f4-b8f501d190b9">
+
+---
+### 상품 수정, 삭제 화면
+#### 상품 수정 전 & 삭제
+<img width="1676" alt="스크린샷 2024-03-03 오후 9 40 36" src="https://github.com/minseojo/neatif/assets/64322765/9931c70e-d6ce-4ec1-b26f-f4913c8bea88">
+
+
+#### 상품 수정 화면
+<img width="1396" alt="스크린샷 2024-03-03 오후 9 40 22" src="https://github.com/minseojo/neatif/assets/64322765/d650bfa1-b634-4c79-9fd0-774829d9af62">
+---
+
+## 상품 정보 화면
+<img width="1680" alt="스크린샷 2024-03-03 오후 9 35 30" src="https://github.com/minseojo/neatif/assets/64322765/5e4fcf4e-eb80-4140-8baa-6f4b7b0f0059">
